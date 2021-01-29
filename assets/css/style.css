@@ -1,0 +1,35 @@
+.timeBlock {
+    text-align: center;
+    text-emphasis: bold;
+  border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    padding-top: 4px;
+}
+
+.appointment {
+    background-color: green;
+    border-color: ivory;
+    border-style: solid;
+    column-fill: auto;
+    border-width: 1px;
+}
+
+.lock {
+    background-color: black;
+    border-style: outset;
+}
+
+.description {
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 50%;
+    height: auto;
+  }
