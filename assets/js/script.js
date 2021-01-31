@@ -25,27 +25,34 @@
 var DateTimeEl = document.querySelector(".DateTime");
 var DateTime = luxon.DateTime;
 var now = DateTime.local();
+var timeBlock = 0;
 
 // dt.toLocaleString()      //=> '9/14/2017'
 // dt.toLocaleString(DateTime.DATETIME_MED) //=> 'September 14, 3:21 AM'
 console.log(now.toLocaleString(DateTime.DATETIME_MED))
 DateTimeEl.textContent = now.toLocaleString(DateTime.DATETIME_MED);
 
-//STUDY GROUP CODE
-// let hourRightNow = moment()
-// // start the hour at 8
-// let hoursOfTheDay = moment().hours(8)
-// console.log(hoursOfTheDay);
-// for (let i = 0; i < 10; i++) {
-// 	var hour = document.createElement('div')
-// 	hoursOfTheDay.add(1, 'hour')
-// 	hour.innerText = hoursOfTheDay.format('h a')
-// 	if(hourRightNow.format('h') === hoursOfTheDay.format('h')){
-// 		hour.classList.add('red')
-// 	} else {
-// 		hour.classList.add('green')
-// 	}
-// 	console.log(hour);
-// 	document.getElementById('container').appendChild(hour)
-// }
+
+function loadPage() {
+    for (i = 8; i < 18; i++) {
+        //Creating elements to display on the page
+        timeBlock = i;
+        var image = "<img src='assets/images/White-Lock-Black-Background.png' alt='Lock Calendar Appointment' width='70px;' height='70px' class='center'>"
+        var container = $('<div />');
+
+        //creat row, then
+        container.append("<p>'timeBlock'</p>");
+
+        // for (var i = 1; i <= num; i++) {
+        //     container.append('<input id="id' + i + '" name="name' + i + '" />');
+
+
+        //     console.log('<input id="id' + i + '" name="name' + i + '" />');
+        //     //check time vs actual time and assign class based on relation
+        // }
+    }
+
+}
+
+loadPage(timeBlock);
 
