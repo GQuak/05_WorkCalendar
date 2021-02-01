@@ -37,3 +37,42 @@
     width: 50%;
     height: auto;
   }
+
+  .past {
+    background-color: green;
+    border-color: ivory;
+    border-style: solid;
+    column-fill: auto;
+    border-width: 1px;
+  }
+
+  #8hour {
+      background-color: green;
+  }
+  #9hour {
+    background-color: green;
+}
+#10hour {
+    background-color: green;
+}
+#11hour {
+    background-color: green;
+}
+#12hour {
+    background-color: green;
+}
+#13hour {
+    background-color: green;
+}
+#14hour {
+    background-color: green;
+}
+#15hour {
+    background-color: green;
+}
+#16hour {
+    background-color: green;
+}
+#17hour {
+    background-color: green;
+}

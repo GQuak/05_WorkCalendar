@@ -1,12 +1,10 @@
 // GIVEN I am using a daily planner to create a schedule
-// WHEN I open the planner
-// THEN the current day is displayed at the top of the calendar
-
-// WHEN I view the time blocks for that day
-// THEN each time block is color-coded to indicate whether it is in the past, present, or future
 
 // WHEN I refresh the page
 // THEN the saved events persist
+
+
+
 
 //LUXON CODE
 var DateTimeEl = document.querySelector(".DateTime");
@@ -15,6 +13,8 @@ var now = DateTime.local();
 var timeBlock = 0;
 
 
+// WHEN I open the planner
+// THEN the current day is displayed at the top of the calendar
 // dt.toLocaleString()      //=> '9/14/2017'
 // dt.toLocaleString(DateTime.DATETIME_MED) //=> 'September 14, 3:21 AM'
 console.log(now.toLocaleString(DateTime.DATETIME_MED))
@@ -132,25 +132,147 @@ seventeenBtn.addEventListener("click", function (event) {
 });
 
 function loadPage() {
-    for (i = 8; i < 18; i++) {
-        //Creating elements to display on the page
-        timeBlock = i;
-        var image = "<img src='assets/images/White-Lock-Black-Background.png' alt='Lock Calendar Appointment' width='70px;' height='70px' class='center'>"
-        var container = $('<div />');
+    console.log("Load page");
+    setBackground();
+    recallAppointments();
+}
 
-        //creat row, then
-        container.append("<p>'timeBlock'</p>");
+function recallAppointments() {
+    var local8 = JSON.parse(localStorage.getItem("eight"));
+    var local9 = JSON.parse(localStorage.getItem("nine"));
+    var local10 = JSON.parse(localStorage.getItem("ten"));
+    var local11 = JSON.parse(localStorage.getItem("eleven"));
+    var local12 = JSON.parse(localStorage.getItem("twelve"));
+    var local13 = JSON.parse(localStorage.getItem("thirteen"));
+    var local14 = JSON.parse(localStorage.getItem("fourteen"));
+    var local15 = JSON.parse(localStorage.getItem("fifteen"));
+    var local16 = JSON.parse(localStorage.getItem("sixteen"));
+    var local17 = JSON.parse(localStorage.getItem("seventeen"));
 
-        // for (var i = 1; i <= num; i++) {
-        //     container.append('<input id="id' + i + '" name="name' + i + '" />');
-
-
-        //     console.log('<input id="id' + i + '" name="name' + i + '" />');
-        //     //check time vs actual time and assign class based on relation
-        // }
+    if (local8 !== null) {
+        eightHourEl.textContent = local8;
+    }
+    if (local9 !== null) {
+        nineHourEl.textContent = local9;
+    }
+    if (local10 !== null) {
+        tenHourEl.textContent = local10;
+    }
+    if (local11 !== null) {
+        elevenHourEl.textContent = local11;
+    }
+    if (local12 !== null) {
+        twelveHourEl.textContent = local12;
+    }
+    if (local13 !== null) {
+        thirteenHourEl.textContent = local13;
+    }
+    if (local14 !== null) {
+        fourteenHourEl.textContent = local14;
+    }
+    if (local15 !== null) {
+        fifteenHourEl.textContent = local15;
+    }
+    if (local16 !== null) {
+        sixteenHourEl.textContent = local16;
+    }
+    if (local17 !== null) {
+        seventeenHourEl.textContent = local17;
     }
 
 }
 
+function setBackground() {
+    console.log("Set background");
+    // WHEN I view the time blocks for that day
+    // THEN each time block is color-coded to indicate whether it is in the past, present, or future
+    if (now.hour >= 18) {
+        $("#8hour").css("background-color", "grey");
+        $("#9hour").css("background-color", "grey");
+        $("#10hour").css("background-color", "grey");
+        $("#11hour").css("background-color", "grey");
+        $("#12hour").css("background-color", "grey");
+        $("#13hour").css("background-color", "grey");
+        $("#14hour").css("background-color", "grey");
+        $("#15hour").css("background-color", "grey");
+        $("#16hour").css("background-color", "grey");
+        $("#17hour").css("background-color", "grey");
+    }
+    else if (now.hour >= 17) {
+        $("#8hour").css("background-color", "grey");
+        $("#9hour").css("background-color", "grey");
+        $("#10hour").css("background-color", "grey");
+        $("#11hour").css("background-color", "grey");
+        $("#12hour").css("background-color", "grey");
+        $("#13hour").css("background-color", "grey");
+        $("#14hour").css("background-color", "grey");
+        $("#15hour").css("background-color", "grey");
+        $("#16hour").css("background-color", "grey");
+        $("#17hour").css("background-color", "white");
+    }
+    else if (now.hour >= 16) {
+        $("#8hour").css("background-color", "grey");
+        $("#9hour").css("background-color", "grey");
+        $("#10hour").css("background-color", "grey");
+        $("#11hour").css("background-color", "grey");
+        $("#12hour").css("background-color", "grey");
+        $("#13hour").css("background-color", "grey");
+        $("#14hour").css("background-color", "grey");
+        $("#15hour").css("background-color", "grey");
+        $("#16hour").css("background-color", "white");
+    }
+    else if (now.hour >= 15) {
+        $("#8hour").css("background-color", "grey");
+        $("#9hour").css("background-color", "grey");
+        $("#10hour").css("background-color", "grey");
+        $("#11hour").css("background-color", "grey");
+        $("#12hour").css("background-color", "grey");
+        $("#13hour").css("background-color", "grey");
+        $("#14hour").css("background-color", "grey");
+        $("#15hour").css("background-color", "white");
+    }
+    else if (now.hour >= 14) {
+        $("#8hour").css("background-color", "grey");
+        $("#9hour").css("background-color", "grey");
+        $("#10hour").css("background-color", "grey");
+        $("#11hour").css("background-color", "grey");
+        $("#12hour").css("background-color", "grey");
+        $("#13hour").css("background-color", "grey");
+        $("#14hour").css("background-color", "white");
+    }
+    else if (now.hour >= 13) {
+        $("#8hour").css("background-color", "grey");
+        $("#9hour").css("background-color", "grey");
+        $("#10hour").css("background-color", "grey");
+        $("#11hour").css("background-color", "grey");
+        $("#12hour").css("background-color", "grey");
+        $("#13hour").css("background-color", "white");
+    }
+    else if (now.hour >= 12) {
+        $("#8hour").css("background-color", "grey");
+        $("#9hour").css("background-color", "grey");
+        $("#10hour").css("background-color", "grey");
+        $("#11hour").css("background-color", "grey");
+        $("#12hour").css("background-color", "white");
+    }
+    else if (now.hour >= 11) {
+        $("#8hour").css("background-color", "grey");
+        $("#9hour").css("background-color", "grey");
+        $("#10hour").css("background-color", "grey");
+        $("#11hour").css("background-color", "white");
+    }
+    else if (now.hour >= 10) {
+        $("#8hour").css("background-color", "grey");
+        $("#9hour").css("background-color", "grey");
+        $("#10hour").css("background-color", "white");
+    }
+    else if (now.hour >= 9) {
+        $("#8hour").css("background-color", "grey");
+        $("#9hour").css("background-color", "white");
+    }
+    else if (now.hour >= 8) {
+        $("#8hour").css("background-color", "white");
+    }
+}
 loadPage();
 
